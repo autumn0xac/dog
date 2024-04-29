@@ -49,7 +49,7 @@ export default function Index() {
             minHeight: '100vh',
             paddingLeft: '5%',
             maxWidth: { md: '60%' },
-            padding: { md: '40px 0', xs: '150px 0 60px' },
+            padding: { md: '40px 0', xs: '150px 0 0' },
           }}
         >
           <Box>
@@ -84,7 +84,7 @@ export default function Index() {
               mt={2}
               sx={{
                 '& img': {
-                  maxHeight: { sm: 400, xs: 260 },
+                  maxHeight: { sm: 200, xs: 260 },
                   maxWidth: '80%',
                 },
               }}
@@ -119,7 +119,7 @@ export default function Index() {
 
             <Box
               sx={{
-                display: { sm: 'none', xs: 'block' },
+                display: { md: 'none', sm: 'block' },
                 '& img': {
                   maxWidth: '100%',
                 },
@@ -127,9 +127,10 @@ export default function Index() {
             >
               <img src={bg1.src} alt="" />
             </Box>
+            <ButtonGroupA />
           </Box>
 
-          <Box
+          {/* <Box
             sx={{
               position: 'absolute',
               bottom: 20,
@@ -143,9 +144,37 @@ export default function Index() {
             <Link underline="hover" target={'_blank'} href="https://t.me/gmdogsol">
               twitter & X
             </Link>
-          </Box>
+          </Box> */}
         </Box>
       </CommonContainer>
     </Wrapper>
+  )
+}
+
+function ButtonGroupA() {
+  return (
+    <Box
+      sx={{
+        position: 'absolute',
+        bottom: 25,
+        right: { md: 200, xs: '45vw' },
+        zIndex: 10,
+        width: { xs: '45vw', md: '270px' },
+        height: '50px',
+        display: 'grid',
+        gridTemplateColumns: '33.3% 33.3% 33.3%',
+        gap: '5px',
+        '& a': {
+          display: 'block',
+          height: '50px',
+          // background: 'rgba(255,255,255,0.6)',
+          cursor: 'pointer',
+        },
+      }}
+    >
+      <Link target="_blank" href="https://dexscreener.com/solana/"></Link>
+      <Link target="_blank" href="https://twitter.com/Daisyonsolona"></Link>
+      <Link target="_blank" href="https://t.me/gmdogsol"></Link>
+    </Box>
   )
 }
