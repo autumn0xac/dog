@@ -1,4 +1,4 @@
-import { Box, Link, styled, Typography } from '@mui/material'
+import { Box, Link, Stack, styled, Typography } from '@mui/material'
 import { CommonContainer } from '../components/Styled'
 // import Button from '../components/Button/Button'
 import Logo from '../assets/a1.jpg'
@@ -7,6 +7,9 @@ import bg2 from '../assets/a3.jpg'
 // import bg1 from '../assets/svg/bg1.svg'
 
 const Wrapper = styled(Box)(({ theme }) => ({
+  maxWidth: 1260,
+  width: '100%',
+  margin: 'auto',
   position: 'relative',
   background: `url(${bg1.src}) no-repeat`,
   backgroundPosition: 'right',
@@ -88,6 +91,31 @@ export default function Index() {
             >
               <img alt="" src={bg2.src} />
             </Box>
+
+            <Stack
+              mt={2}
+              spacing={1}
+              sx={{
+                '& a': {
+                  color: '#000',
+                  fontSize: 20,
+                  fontWeight: 600,
+                },
+              }}
+            >
+              <Typography
+                fontSize={20}
+                sx={{
+                  wordBreak: 'break-all',
+                }}
+                fontWeight={600}
+              >
+                Address: CyeLb9o1HtKX4Fs1N2zNBWTyGkzNYMbnEtW75R8mrG1v
+              </Typography>
+              <Link target="_blank" href="https://pump.fun/CyeLb9o1HtKX4Fs1N2zNBWTyGkzNYMbnEtW75R8mrG1v">
+                Pump
+              </Link>
+            </Stack>
 
             <Box
               sx={{
