@@ -53,8 +53,8 @@ export default function Button(props: Props) {
         backgroundColor: backgroundColor ? backgroundColor : primary ? theme.palette.text.primary : theme.bgColor.bg1,
         color: color ? color : primary ? theme.palette.primary.contrastText : theme.palette.text.primary,
         '&:hover': {
-          color: theme.textColor.text2,
-          background: theme.palette.common.black,
+          color: '#fff !important',
+          // background: theme.palette.common.black,
         },
         '&:disabled': {
           color: 'rgba(0,0,0,0.5)',

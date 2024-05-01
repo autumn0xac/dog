@@ -1,22 +1,26 @@
 import { Box, Link, Stack, styled, Typography } from '@mui/material'
-import { CommonContainer } from '../components/Styled'
 // import Button from '../components/Button/Button'
-import Logo from '../assets/a1.jpg'
-import bg1 from '../assets/a2.jpg'
-import bg2 from '../assets/a3.jpg'
+import Logo from '../assets/1.jpg'
+import img1 from '../assets/6.jpg'
+import img5 from '../assets/5.jpg'
+import img7 from '../assets/7.jpg'
+import Button from '../components/Button/Button'
+// import bg2 from '../assets/2.jpg'
 // import bg1 from '../assets/svg/bg1.svg'
 
+const ca = '9kCJx9RHhghso9ZQSsaL12XZTXx1qBJpyUjr6iq1umqj'
+
 const Wrapper = styled(Box)(({ theme }) => ({
-  maxWidth: 1260,
+  maxWidth: 1360,
   width: '100%',
   margin: 'auto',
-  position: 'relative',
-  background: `url(${bg1.src}) no-repeat`,
-  backgroundPosition: 'right',
-  backgroundSize: 'auto 100%',
   [theme.breakpoints.down('md')]: {
-    background: 'none',
+    padding: '20px',
   },
+}))
+
+const Img = styled(`img`)(({}) => ({
+  maxWidth: '100%',
 }))
 
 // const StyledLink = styled(Link)({
@@ -30,123 +34,66 @@ const Wrapper = styled(Box)(({ theme }) => ({
 export default function Index() {
   return (
     <Wrapper>
-      <CommonContainer>
-        <Link
-          underline="none"
-          href="#/"
-          sx={{
-            position: 'absolute',
-            top: 40,
-          }}
-        >
+      <Box padding={'10px 0'}>
+        <Link underline="none" href="#/">
           <img alt="" style={{ height: 60 }} src={Logo.src} />
         </Link>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            minHeight: '100vh',
-            paddingLeft: '5%',
-            maxWidth: { md: '60%' },
-            padding: { md: '40px 0', xs: '150px 0 0' },
-          }}
-        >
-          <Box>
-            <Typography variant="h2" fontSize={{ md: 64, xs: 32 }}>
-              GMDOG
-            </Typography>
-            <Typography mt={'16px'} variant="body1" fontSize={{ md: 24, xs: 16 }} maxWidth={540}>
-              Total supply 1B
-            </Typography>
-            {/* <Box mt="35px" display={'grid'} gap="15px" gridTemplateColumns="repeat(auto-fill, 200px)">
-              <StyledLink
-                target="_blank"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfQCF3ja2LTZDs7biIdydPUvl5bStCajC_NxboPCd9t6SEDUQ/viewform?usp=pp_url"
-              >
-                <Button>Request Demo</Button>
-              </StyledLink>
-              <StyledLink
-                target="_blank"
-                href="https://drive.google.com/file/d/1h7behe49PkvqzFb-CRU5iev24X01FmZJ/view?usp=sharing"
-              >
-                <Button>Whitepaper</Button>
-              </StyledLink>
-              <StyledLink target="_blank" href="https://docs.multievent.xyz/">
-                <Button>Learn More</Button>
-              </StyledLink>
-              <StyledLink href="mailto://Contact@multievent.xyz">
-                <Button>Contact Us</Button>
-              </StyledLink>
-            </Box> */}
+      </Box>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: '46% 50%' },
+          // gap: '40px',
+          alignItems: 'center',
+        }}
+      >
+        <Box>
+          <Img src={img1.src} alt="" />
 
-            <Box
-              mt={2}
-              sx={{
-                '& img': {
-                  maxHeight: { sm: 200, xs: 260 },
-                  maxWidth: '80%',
-                },
-              }}
-            >
-              <img alt="" src={bg2.src} />
-            </Box>
-
-            <Stack
-              mt={2}
-              spacing={1}
-              sx={{
-                '& a': {
-                  color: '#000',
-                  fontSize: 20,
-                  fontWeight: 600,
-                },
-              }}
-            >
-              <Typography
-                fontSize={20}
-                sx={{
-                  wordBreak: 'break-all',
-                }}
-                fontWeight={600}
-              >
-                Address: CyeLb9o1HtKX4Fs1N2zNBWTyGkzNYMbnEtW75R8mrG1v
-              </Typography>
-              <Link target="_blank" href="https://pump.fun/CyeLb9o1HtKX4Fs1N2zNBWTyGkzNYMbnEtW75R8mrG1v">
-                Pump
-              </Link>
-            </Stack>
-
-            <Box
-              sx={{
-                display: { md: 'none', sm: 'block' },
-                '& img': {
-                  maxWidth: '100%',
-                },
-              }}
-            >
-              <img src={bg1.src} alt="" />
-            </Box>
-            <ButtonGroupA />
-          </Box>
-
-          {/* <Box
+          <Stack
+            mt={2}
+            spacing={1}
             sx={{
-              position: 'absolute',
-              bottom: 20,
-              display: 'grid',
-              fontWeight: 700,
               '& a': {
                 color: '#000',
+                fontSize: 20,
+                fontWeight: 600,
               },
             }}
           >
-            <Link underline="hover" target={'_blank'} href="https://t.me/gmdogsol">
-              twitter & X
-            </Link>
-          </Box> */}
+            <Typography
+              fontSize={20}
+              sx={{
+                wordBreak: 'break-all',
+              }}
+              fontWeight={600}
+            >
+              Address: {ca}
+            </Typography>
+
+            <Button>
+              <Link target="_blank" href={`https://pump.fun/${ca}`}>
+                Pump
+              </Link>
+            </Button>
+          </Stack>
         </Box>
-      </CommonContainer>
+
+        <Box
+          sx={{
+            display: 'grid',
+            gap: '20px',
+            paddingLeft: { md: '20px', xs: 0 },
+            paddingTop: { md: 0, xs: '20px' },
+          }}
+        >
+          <Img src={img5.src} alt="" />
+          <Box position={'relative'}>
+            <Img src={img7.src} alt="" />
+            <ButtonGroupA />
+          </Box>
+        </Box>
+      </Box>
     </Wrapper>
   )
 }
@@ -156,10 +103,10 @@ function ButtonGroupA() {
     <Box
       sx={{
         position: 'absolute',
-        bottom: 25,
-        right: { md: 200, xs: '45vw' },
+        right: '2%',
+        bottom: '23%',
         zIndex: 10,
-        width: { xs: '45vw', md: '270px' },
+        width: '50%',
         height: '50px',
         display: 'grid',
         gridTemplateColumns: '33.3% 33.3% 33.3%',
@@ -172,7 +119,7 @@ function ButtonGroupA() {
         },
       }}
     >
-      <Link target="_blank" href="https://dexscreener.com/solana/"></Link>
+      <Link target="_blank" href={`https://dexscreener.com/solana/${ca}`}></Link>
       <Link target="_blank" href="https://twitter.com/Daisyonsolona"></Link>
       <Link target="_blank" href="https://t.me/gmdogsol"></Link>
     </Box>
